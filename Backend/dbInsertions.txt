@@ -1,0 +1,135 @@
+db.users.insertMany([
+    { 
+        username: "john_doe", 
+        email: "john.doe@example.com", 
+        password: "hashedpassword123", 
+        userType: "Faculty", 
+        gender: "Male" 
+    },
+    { 
+        username: "jane_smith", 
+        email: "jane.smith@example.com", 
+        password: "securepass456", 
+        userType: "Student", 
+        gender: "Female" 
+    },
+    { 
+        username: "alex_jones", 
+        email: "alex.jones@example.com", 
+        password: "pass789xyz", 
+        userType: "Faculty", 
+        gender: "Male" 
+    },
+    { 
+        username: "emily_clark", 
+        email: "emily.clark@example.com", 
+        password: "password321!", 
+        userType: "Student", 
+        gender: "Female" 
+    },
+    { 
+        username: "michael_brown", 
+        email: "michael.brown@example.com", 
+        password: "mikepass999", 
+        userType: "Student", 
+        gender: "Male" 
+    },
+    { 
+        username: "sarah_wilson", 
+        email: "sarah.wilson@example.com", 
+        password: "sarahSecure2024", 
+        userType: "Student", 
+        gender: "Female" 
+    },
+    { 
+        username: "david_lee", 
+        email: "david.lee@example.com", 
+        password: "facultyPass789", 
+        userType: "Faculty", 
+        gender: "Male" 
+    }
+]);
+
+db.technicians.insertMany([
+    {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        phone: "1234567890",
+        techType: "Software Technician",
+        image: "john_doe.jpg"
+    },
+    {
+        name: "Alice Smith",
+        email: "alice.smith@example.com",
+        phone: "0987654321",
+        techType: "Hardware Technician",
+        image: "alice_smith.jpg"
+    },
+    {
+        name: "Michael Brown",
+        email: "michael.brown@example.com",
+        phone: "1122334455",
+        techType: "Electrician",
+        image: "michael_brown.jpg"
+    },
+    {
+        name: "David Wilson",
+        email: "david.wilson@example.com",
+        phone: "5566778899",
+        techType: "Furniture Repair",
+        image: "david_wilson.jpg"
+    },
+    {
+        name: "Emma Johnson",
+        email: "emma.johnson@example.com",
+        phone: "6677889900",
+        techType: "Software Technician",
+        image: "emma_johnson.jpg"
+    }
+]);
+
+db.labs.insertMany([
+    { labName: "network lab", deptName: "computer science" },
+    { labName: "ai lab", deptName: "computer science" },
+    { labName: "cybersecurity lab", deptName: "computer science" },
+    { labName: "software engineering lab", deptName: "computer science" },
+    { labName: "database systems lab", deptName: "computer science" },
+
+    { labName: "physics lab", deptName: "electrical engineering" },
+    { labName: "circuits lab", deptName: "electrical engineering" },
+    { labName: "power systems lab", deptName: "electrical engineering" },
+    { labName: "control systems lab", deptName: "electrical engineering" },
+    { labName: "embedded systems lab", deptName: "electrical engineering" }
+]);
+
+db.pcs.insertMany([
+    { pcName: "pc1-net", labName: "network lab" },
+    { pcName: "pc2-net", labName: "network lab" },
+
+    { pcName: "pc1-ail", labName: "ai lab" },
+    { pcName: "pc2-ail", labName: "ai lab" },
+
+    { pcName: "pc1-cyl", labName: "cybersecurity lab" },
+    { pcName: "pc2-cyl", labName: "cybersecurity lab" },
+
+    { pcName: "pc1-sel", labName: "software engineering lab" },
+    { pcName: "pc2-sel", labName: "software engineering lab" },
+
+    { pcName: "pc1-dsl", labName: "database systems lab" },
+    { pcName: "pc2-dsl", labName: "database systems lab" },
+
+    { pcName: "pc1-phl", labName: "physics lab" },
+    { pcName: "pc2-phl", labName: "physics lab" },
+
+    { pcName: "pc1-cil", labName: "circuits lab" },
+    { pcName: "pc2-cil", labName: "circuits lab" },
+
+    { pcName: "pc1-psl", labName: "power systems lab" },
+    { pcName: "pc2-psl", labName: "power systems lab" },
+
+    { pcName: "pc1-csl", labName: "control systems lab" },
+    { pcName: "pc2-csl", labName: "control systems lab" },
+
+    { pcName: "pc1-esl", labName: "embedded systems lab" },
+    { pcName: "pc2-esl", labName: "embedded systems lab" }
+]);
