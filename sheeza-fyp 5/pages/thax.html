@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Background Login Screen</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            background-repeat: no-repeat;
+            background: #ffffff;
+            position: relative;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #login-box {
+            border-radius: 10px;
+            z-index: 9999;
+            min-width: 450px;
+            margin: 0 auto;
+            background: rgb(255, 255, 255);
+            padding: 16px;
+            border-radius: 18px;
+            box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 32%), 0 0.5rem 0rem -1.25rem hsl(218deg 100% 72.96% / 32%);
+        }
+        
+        .wrapper-1 {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .wrapper-2 {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: "Kaushan Script", cursive;
+            font-size: 4em;
+            letter-spacing: 3px;
+            color: #6689ff;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        
+        .wrapper-2 p {
+            margin: 0;
+            font-size: 1.3em;
+            color: #aaa;
+            font-family: "Source Sans Pro", sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .go-home {
+            color: #fff;
+            background: #6689ff;
+            border: none;
+            padding: 10px 50px;
+            margin: 30px 0;
+            border-radius: 30px;
+            text-transform: capitalize;
+            box-shadow: 0 10px 16px 1px rgba(174, 199, 251, 1);
+            text-decoration: none;
+        }
+        
+        .go-home:hover {
+            color: #fff;
+            background: #6689ff;
+            border: none;
+            padding: 10px 50px;
+            margin: 30px 0;
+            border-radius: 30px;
+            text-transform: capitalize;
+            box-shadow: 0 10px 16px 1px rgba(174, 199, 251, 1);
+            text-decoration: none;
+        }
+        
+        .footer-like {
+            margin-top: auto;
+            background: #d7e6fe;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .footer-like p {
+            margin: 0;
+            padding: 4px;
+            color: #6689ff;
+            font-family: "Source Sans Pro", sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .footer-like p a {
+            text-decoration: none;
+            color: #6689ff;
+            font-weight: 600;
+        }
+        
+        @media (min-width: 360px) {
+            h1 {
+                font-size: 4.5em;
+            }
+            .go-home {
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (min-width: 600px) {
+            .wrapper-1 {
+                height: initial;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+        }
+        
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: 50% 50%;
+            position: fixed;
+            top: 0px;
+            z-index: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <div id="login-box">
+            <div class="wrapper-1">
+                <div class="wrapper-2">
+                    <h1>Thank you !</h1>
+                    <p>Thanks for subscribing to our news letter. </p>
+                    <p>you should receive a confirmation email soon </p>
+                    <br>
+                    <a href="../pages/home.html" class="go-home">go home</a>
+                    <!-- <a href class="go-home">go home</a> -->
+                </div>
+                <div class="footer-like">
+                    <p>
+                        <a href="../pages/report.html">Click here to send again</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="particles-js"></div>
+    <!-- partial -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'></script>
+    <script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+    <!-- <script src="./script.js"></script> -->
+    <script>
+        $.getScript("https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js", function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 70,
+                        "density": {
+                            "enable": true,
+                            "value_area": 900
+                        }
+                    },
+                    "color": {
+                        "value": '#6689ff' // Array of colors for dynamic effect
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 5,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#949494",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 100
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true,
+                "config_demo": {
+                    "hide_card": false,
+                    "background_color": "#b61924",
+                    "background_image": "",
+                    "background_position": "50% 50%",
+                    "background_repeat": "no-repeat",
+                    "background_size": "cover"
+                }
+            });
+        });
+    </script>
+    <script>
+        // Get the form element
+        const loginForm = document.getElementById('loginForm');
+
+        // Add an event listener to the form for submit event
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+
+            if (email === "user@example.com" && password === "password123") {
+
+                window.location.href = 'index.html';
+            } else {
+                alert("Invalid login credentials");
+            }
+        });
+    </script>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text'; // Change to text to show password
+                eyeIcon.setAttribute('name', 'eye'); // Change icon to eye
+            } else {
+                passwordInput.type = 'password'; // Change back to password
+                eyeIcon.setAttribute('name', 'eye-off'); // Change icon back to eye-off
+            }
+        }
+    </script>
+
+</body>
+
+</html>

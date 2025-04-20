@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Background Login Screen</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./css/custom.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            background-repeat: no-repeat;
+            background: #ffffff;
+            position: relative;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #login-box {
+            border-radius: 10px;
+            /* box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 42%); */
+            z-index: 9;
+            min-width: 450px;
+            margin: 0 auto;
+            background: rgb(255, 255, 255);
+            padding: 16px;
+            border-radius: 18px;
+            /* box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 42%), 
+            0 -0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 42%); */
+            box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 32%), 0 0.5rem 0rem -1.25rem hsl(218deg 100% 72.96% / 32%);
+        }
+        
+        #login-box .logo .logo-caption {
+            font-family: 'Poiret One', cursive;
+            color: white;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        
+        #login-box .logo .tweak {
+            color: #020200;
+        }
+        
+        #login-box .controls {
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        #login-box .controls input {
+            border-radius: 0px;
+            background: rgb(191 191 191 / 7%);
+            border: 0px;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            padding-left: 22px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+        }
+        
+        #login-box .controls input:focus {
+            box-shadow: none;
+        }
+        
+        #login-box a.btn-custom {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
+        #login-box a.btn-custom:focus {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
+        #login-box button.btn-custom {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
+        #login-box button.btn-custom:focus {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
+        #login-box button.btn-custom:hover {
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+        
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: 50% 50%;
+            position: fixed;
+            top: 0px;
+            z-index: 1;
+        }
+        
+        .form-control {
+            height: 50px;
+        }
+        
+        .new_fr {
+            margin-top: 25px;
+            text-align: right;
+            margin-bottom: 0px;
+        }
+        
+        .new_fr a {
+            margin-top: 10px;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .password-wrapper {
+            position: relative;
+        }
+        
+        .password-wrapper input {
+            width: 100%;
+            padding-right: 40px;
+        }
+        
+        .password-wrapper i {
+            position: absolute;
+            right: 22px;
+            top: 38%;
+            transform: translateY(-50%);
+            font-size: 18px;
+        }
+        
+        .swal2-zindex {
+            z-index: 9999 !important;
+            /* Set custom z-index */
+        }
+        /* .swal2-custom-size {
+            width: 400px !important;
+            height: 200px !important;
+        }
+         */
+        
+        div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+            font-size: 16px !important;
+        }
+        
+        div:where(.swal2-container) .swal2-html-container {
+            font-size: 19px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <div id="login-box">
+            <div class="logo">
+                <!-- <img src="./dark-logo.svg" class="img img-responsive  center-block" /> -->
+                <img src="./images/Labease.png"  class="img img-responsive  center-block" />
+                <!-- <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1> -->
+            </div>
+            <!-- /.logo -->
+            <form id="loginForm" action="javascript:void(0);">
+                <div class="controls">
+                    <input type="email" name="email" placeholder="Email" class="form-control" required/>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control" required/>
+                        <i class="fa-regular fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-block btn-custom">Login</button>
+                </div>
+            </form>
+            <p class="new_fr">
+                <a href="#" id="forgotPassword">Forgot your password?</a>
+            </p>
+
+        </div>
+    </div>
+    <div id="particles-js"></div>
+    <!-- partial -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'></script>
+    <script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- <script src="./script.js"></script> -->
+    <script>
+        $.getScript("https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js", function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 70,
+                        "density": {
+                            "enable": true,
+                            "value_area": 900
+                        }
+                    },
+                    "color": {
+                        "value": '#6689ff' // Array of colors for dynamic effect
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 5,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#949494",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 100
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true,
+                "config_demo": {
+                    "hide_card": false,
+                    "background_color": "#b61924",
+                    "background_image": "",
+                    "background_position": "50% 50%",
+                    "background_repeat": "no-repeat",
+                    "background_size": "cover"
+                }
+            });
+        });
+    </script>
+    <!-- credential check -->
+    <script type="module">
+        import url from './js/config.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch(`${url}/api/user/check-auth`, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+
+                if (response.status === 200) {
+                    Swal.fire({
+                        icon: "info",
+                        title: "You are already logged in",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                    setTimeout(() => {
+                        window.location.href = "./pages/home.html";
+                    }, 2500);
+                }
+            } catch (error) {
+                console.error("Error checking authentication:", error);
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the form from submitting and changing the URL
+
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            const dataObj = {
+                email,
+                password
+            };
+
+            try {
+                const response = await fetch(`${url}/api/user/login`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dataObj)
+                });
+
+                if (response.status === 200) {
+                    window.location.href = "./pages/home.html"; // Redirect to next page
+                } else {
+                    // Show SweetAlert pop-up in the center of the screen if the credentials are wrong
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Email or Password is incorrect",
+                    });
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+    <!-- show and hide password -->
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function() {
+            // Toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            // Toggle the icon between eye and eye-slash
+            if (type === "password") {
+                this.classList.remove("fa-eye-slash");
+                this.classList.add("fa-eye");
+            } else {
+                this.classList.remove("fa-eye");
+                this.classList.add("fa-eye-slash");
+            }
+        });
+    </script>
+    <!-- forget password -->
+
+    <script>
+        document.getElementById("forgotPassword").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+
+            Swal.fire({
+                title: "plz contact with admin",
+                showClass: {
+                    popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+            `
+                },
+                hideClass: {
+                    popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+            `
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+</html>
